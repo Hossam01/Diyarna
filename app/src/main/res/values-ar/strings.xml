@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diyarna</string>
+    <string name="facebook_app_id">323455573236307</string>
+    <string name="fb_login_protocol_scheme">fb323455573236307</string>
+    <string name="title_home">Home</string>
+    <string name="campaigns">Campaigns</string>
+    <string name="products">Products</string>
+    <string name="search">Search</string>
+</resources>

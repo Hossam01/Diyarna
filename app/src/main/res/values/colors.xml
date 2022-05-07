@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#960709</color>
+    <color name="colorPrimaryDark">#8E090A</color>
+    <color name="colorAccent">#f9c999</color>
+    <color name="google">#DB4437</color>
+
+
+
+
+
+
+
+    <color name="background">#EFEFEF</color>
+    <color name="background_light_dark">#5B0C0D</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="arrow">#880308</color>
+    <color name="yellowColor">#FEC209</color>
+    <color name="lightBackgroundColor">#F9F9F9</color>
+    <color name="btnColor">#6E2E15</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="textColor3">#5D5D5D</color>
+    <color name="textColor2">#E5B147</color>
+    <color name="textColorHint">#D8D8D8</color>
+    <color name="editTextBgColor">#1DFFFFFF</color>
+    <color name="editTextDarkBgColor">#34014C</color>
+    <color name="darkerGrayColor">@android:color/darker_gray</color>
+    <color name="bottom_background_color">#430261</color>
+    <color name="bottom_nav_view_checked_item">#f8356d</color>
+
+    <color name="transparent">@android:color/transparent</color>
+    <color name="transparentLight">#23000000</color>
+    <color name="lightGray">#f7f7f7</color>
+    <color name="lightGray2">#F0F0F0</color>
+    <color name="gray">#d5d5d5</color>
+    <color name="gray2">#888888</color>
+    <color name="gray40">#66000000</color>
+    <color name="orange50">#80F15923</color>
+    <color name="darkOrange">#be3403</color>
+    <color name="colorText">#371414</color>
+    <color name="dotIindicatorUnSelected">#23CCCCCC</color>
+    <color name="default_selected_dot_color">@color/colorAccent</color>
+    <color name="default_dot_color">#23CCCCCC</color>
+</resources>
