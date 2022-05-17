@@ -10,7 +10,17 @@
         android:id="@+id/nav_home"
         android:name="com.example.diyarna.presentation.main.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+
+        <action android:id="@+id/nav_home_action_toProduct"
+            app:destination="@+id/nav_product">
+            <argument
+                android:name="itemProduct"
+                app:argType="com.example.diyarna.data.remote.model.Products"
+                />
+        </action>
+
+    </fragment>
 
     <fragment
         android:id="@+id/nav_product"
@@ -23,5 +33,27 @@
         android:name="com.example.diyarna.presentation.main.campaign.CampaignFragment"
         android:label="@string/campaigns"
         tools:layout="@layout/campaign_fragment" />
+
+    <dialog
+        android:id="@+id/nav_donate_view"
+        android:name="com.example.diyarna.presentation.main.Dialog.DonateDialog"
+        tools:layout="@layout/donate_dialog"/>
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.example.diyarna.presentation.main.details.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/details_fragment" />
+
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.example.diyarna.presentation.main.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/cart_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_more"
+        android:name="com.example.diyarna.presentation.main.more.MoreFragment"
+        android:label="More"
+        tools:layout="@layout/more_fragment"/>
 
 </navigation>

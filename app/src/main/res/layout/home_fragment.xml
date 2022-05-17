@@ -15,18 +15,149 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="start"
-                android:text="Latest Products"
+                android:text="@string/latest_products"
                 android:fontFamily="@font/din_next_bold"
                 android:layout_margin="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/orange50"
                 />
+
+                <TextView
+                    android:id="@+id/checkallProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/din_next_regular"
+                    android:gravity="end"
+
+                    android:text="@string/check_all" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItemlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_title"
+                tools:listitem="@layout/home_item"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                />
+
+            <LinearLayout
+                android:id="@+id/header_campaigns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvItemlist">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:text="@string/latest_campaigns"
+                    android:fontFamily="@font/din_next_bold"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/orange50"
+                    />
+                <TextView
+                    android:id="@+id/checkallCampaign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:gravity="end"
+                    android:paddingTop="10dp"
+
+                    android:fontFamily="@font/din_next_regular"
+                    android:text="@string/check_all"
+                    android:layout_margin="10dp"
+                    />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCampaignlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_campaigns"
+                tools:listitem="@layout/product_item"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                />
+
+            <LinearLayout
+                android:id="@+id/header_daily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvCampaignlist">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:text="@string/daily_donation"
+                    android:fontFamily="@font/din_next_bold"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/orange50"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/image_daily"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_daily"
+                android:src="@drawable/logo"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/header_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_daily">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:text="@string/news"
+                    android:fontFamily="@font/din_next_bold"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/orange50"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -34,27 +165,29 @@
                     android:layout_gravity="start"
                     android:gravity="end"
                     android:fontFamily="@font/din_next_regular"
-                    android:text="Check all >"
+                    android:text="@string/check_all"
+                    android:paddingTop="10dp"
+
                     android:layout_margin="10dp"
                     />
             </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvItemlist"
+                android:id="@+id/rvnewslist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/header_title"
+                app:layout_constraintTop_toBottomOf="@+id/header_news"
                 tools:listitem="@layout/product_item"
-                
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.core.widget.NestedScrollView>
 

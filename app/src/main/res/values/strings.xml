@@ -6,4 +6,15 @@
     <string name="campaigns">Campaigns</string>
     <string name="products">Products</string>
     <string name="search">Search</string>
+    <string name="latest_products">Latest Products</string>
+    <string name="check_all"><![CDATA[Check all >]]></string>
+    <string name="latest_campaigns">Latest Campaigns</string>
+    <string name="daily_donation">Daily Donation</string>
+    <string name="news">News</string>
+    <string name="donate_now">Donate Now</string>
+    <string name="custom_amount">Custom Amount</string>
+    <string name="egp">EGP</string>
+    <string name="your_cart_empty">Your Cart is Empty</string>
+    <string name="price">Price</string>
+    <string name="more">More</string>
 </resources>

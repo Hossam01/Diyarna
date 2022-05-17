@@ -17,5 +17,10 @@
         android:icon="@drawable/packet"
         android:title="@string/products" />
 
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/more"
+        android:title="@string/more" />
+
 
 </menu>
