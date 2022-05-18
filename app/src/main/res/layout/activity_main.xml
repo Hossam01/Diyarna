@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".presentation.main.MainActivity">
 
-    <include layout="@layout/action_bar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/action_bar"/>
 
     <fragment
         android:id="@+id/nav_host_fragment"

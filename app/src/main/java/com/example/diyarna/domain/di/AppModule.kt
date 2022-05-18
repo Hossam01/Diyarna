@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.diyarna.BuildConfig
 import com.example.diyarna.data.local.SharedPreferencesManager
+import com.example.diyarna.data.remote.ApiService
 import com.example.diyarna.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -55,21 +56,10 @@ object AppModule {
         .client(okHttpClient)
         .build()
 
-//    @Provides
-//    @Singleton
-//    fun provideApiService(retrofit: Retrofit) = retrofit.create(WebService::class.java)
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)
 
-//    @Provides
-//    @Singleton
-//    fun provideStockDatabase(@ApplicationContext context: Context): AppDatabase {
-//        return Room.databaseBuilder(context, AppDatabase::class.java, ROOM_DATA_BASE_NAME)
-//            .fallbackToDestructiveMigration()
-//            .build()
-//    }
-//
-////    @Provides
-////    fun provideAppDao(appDatabase: AppDatabase) =
-////        appDatabase.dao()
 
     @Provides
     @Singleton

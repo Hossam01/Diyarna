@@ -13,7 +13,7 @@ import com.example.diyarna.data.remote.model.ProductItem
 import com.example.diyarna.databinding.ProductFragmentBinding
 import com.example.diyarna.presentation.main.MainActivity
 import com.example.diyarna.presentation.main.home.HomeViewModel
-import com.example.diyarna.presentation.main.products.adapter.ProductAdapter
+import com.example.diyarna.presentation.main.home.adapter.ProductAdapter
 import com.example.diyarna.util.Status
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -83,7 +83,7 @@ class ProductFragment:BaseFragment(), ProductAdapter.ItemAdapterListener {
         (requireActivity() as MainActivity).addProductToCard(item)
     }
 
-    override fun onDetailsItemClicked(item: ProductItem) {
+    override fun goToDetails(item: ProductItem) {
         val bundle = Bundle()
         bundle.putParcelable("itemDetails",item)
         (requireActivity() as MainActivity).navToDestination(R.id.nav_details,bundle)
