@@ -12,6 +12,7 @@ import com.example.diyarna.base.BaseFragment
 import com.example.diyarna.data.remote.model.CampaignsItem
 import com.example.diyarna.data.remote.model.ProductItem
 import com.example.diyarna.databinding.HomeFragmentBinding
+import com.example.diyarna.databinding.MoreFragmentBinding
 import com.example.diyarna.presentation.main.MainActivity
 import com.example.diyarna.presentation.main.home.adapter.CampaginsAdapter
 import com.example.diyarna.presentation.main.home.adapter.ProductAdapter
@@ -21,27 +22,17 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment() , ProductAdapter.ItemAdapterListener,CampaginsAdapter.ItemAdapterListener {
+class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::inflate) , ProductAdapter.ItemAdapterListener,CampaginsAdapter.ItemAdapterListener {
 
-    lateinit var binding:HomeFragmentBinding
     val homeViewModel :HomeViewModel by viewModels()
     lateinit var adapteritem: ProductAdapter
     lateinit var adapterCampaginsItem: CampaginsAdapter
     lateinit var productList:ArrayList<ProductItem>
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        binding= HomeFragmentBinding.inflate(layoutInflater)
-        return binding.root
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        (requireActivity() as MainActivity).setToolBarTitle("Home")
+        setToolbarTitle("Home")
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,8 +64,7 @@ class HomeFragment : BaseFragment() , ProductAdapter.ItemAdapterListener,Campagi
                     }
                     Status.ERROR -> {
                         if (it.message != null) {
-                            Toast.makeText(requireActivity(), it.message, Toast.LENGTH_LONG)
-                                .show()
+                            showToast(it.message)
                         }
                     }
                     Status.LOADING -> {
@@ -94,8 +84,7 @@ class HomeFragment : BaseFragment() , ProductAdapter.ItemAdapterListener,Campagi
                     }
                     Status.ERROR -> {
                         if (it.message != null) {
-                            Toast.makeText(requireActivity(), it.message, Toast.LENGTH_LONG)
-                                .show()
+                            showToast(it.message)
                         }
                     }
                     Status.LOADING -> {

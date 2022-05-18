@@ -20,29 +20,20 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProductFragment:BaseFragment(), ProductAdapter.ItemAdapterListener {
-    lateinit var binding: ProductFragmentBinding
+class ProductFragment:BaseFragment<ProductFragmentBinding>(ProductFragmentBinding::inflate), ProductAdapter.ItemAdapterListener {
     val homeViewModel : HomeViewModel by viewModels()
     lateinit var adapteritem: ProductAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
 
-        binding= ProductFragmentBinding.inflate(layoutInflater)
-        (requireActivity() as MainActivity).setToolBarTitle("Product")
-        binding.container.setOnRefreshListener {
-            homeViewModel.getDataItem()
-        }
-
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setToolbarTitle("Product")
+
+        binding.container.setOnRefreshListener {
+            homeViewModel.getDataItem()
+        }
         if (arguments!=null) {
             var itemDto = requireArguments().getParcelableArrayList<ProductItem>("itemProduct")
             assignAdapter()
@@ -63,7 +54,7 @@ class ProductFragment:BaseFragment(), ProductAdapter.ItemAdapterListener {
                     }
                     Status.ERROR -> {
                         if (it.message != null) {
-                            Toast.makeText(requireActivity(), it.message, Toast.LENGTH_LONG).show()
+                            showToast(it.message)
                         }
                     }
                     Status.LOADING -> {

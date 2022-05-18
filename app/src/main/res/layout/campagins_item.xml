@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="3dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="5dp"
+        android:background="@color/gray"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/addCart_back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@color/white"
+                android:layout_margin="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/addCart"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_add_shopping_cart_24"
+                app:layout_constraintBottom_toBottomOf="@id/addCart_back"
+                app:layout_constraintEnd_toEndOf="@id/addCart_back"
+                app:layout_constraintStart_toStartOf="@id/addCart_back"
+                app:layout_constraintTop_toTopOf="@id/addCart_back" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:fontFamily="@font/din_next_bold"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+            <com.example.diyarna.presentation.comparingperformancebar.ValueProgressBar
+                android:id="@+id/valuesProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@id/card"
+                app:layout_constraintStart_toStartOf="@id/card"
+                app:layout_constraintTop_toBottomOf="@+id/card"
+                app:vpb_progressLeftColor="#77B9C1"
+                app:vpb_progressRightColor="#45718B"
+                app:vpb_percent="false"
+                app:vpb_textSize="15sp"
+                app:vpb_valueLeft="1000"
+                app:vpb_valueRight="500"
+                android:layout_gravity="bottom"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

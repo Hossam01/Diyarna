@@ -10,6 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.diyarna.base.BaseFragment
 import com.example.diyarna.data.remote.model.ProductItem
 import com.example.diyarna.databinding.CampaignFragmentBinding
+import com.example.diyarna.databinding.HomeFragmentBinding
+import com.example.diyarna.domain.extention.castToActivity
 import com.example.diyarna.presentation.main.MainActivity
 import com.example.diyarna.presentation.main.home.HomeViewModel
 import com.example.diyarna.presentation.main.home.adapter.CampaginsAdapter
@@ -19,28 +21,20 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CampaignFragment:BaseFragment() {
+class CampaignFragment:BaseFragment<CampaignFragmentBinding>(CampaignFragmentBinding::inflate) {
 
-    lateinit var binding: CampaignFragmentBinding
     val homeViewModel : HomeViewModel by viewModels()
     lateinit var adapterCampaginsItem: CampaginsAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        binding= CampaignFragmentBinding.inflate(layoutInflater)
-        (requireActivity() as MainActivity).setToolBarTitle("Campaign")
-        binding.container.setOnRefreshListener {
-            homeViewModel.getCampaignsItem()
-        }
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setToolbarTitle("Campaign")
+
+        binding.container.setOnRefreshListener {
+            homeViewModel.getCampaignsItem()
+        }
         if (arguments==null)
         {
         getCampaignsItem()
@@ -58,8 +52,8 @@ class CampaignFragment:BaseFragment() {
                     }
                     Status.ERROR -> {
                         if (it.message != null) {
-                            Toast.makeText(requireActivity(), it.message, Toast.LENGTH_LONG)
-                                .show()
+                            showToast(it.message)
+
                         }
                     }
                     Status.LOADING -> {
@@ -73,4 +67,7 @@ class CampaignFragment:BaseFragment() {
         adapterCampaginsItem = CampaginsAdapter()
         binding.rvItemlist.adapter = adapterCampaginsItem
     }
+
+
+
 }

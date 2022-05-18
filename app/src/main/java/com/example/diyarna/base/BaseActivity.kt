@@ -34,4 +34,6 @@ open class BaseActivity : AppCompatActivity() {
             Utils.showToast(this, msg)
         }
     }
+
+
 }
