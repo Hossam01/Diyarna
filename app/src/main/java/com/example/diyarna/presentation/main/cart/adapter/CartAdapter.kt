@@ -12,6 +12,7 @@ import com.example.diyarna.data.remote.model.ProductItem
 import com.example.diyarna.databinding.CartItemBinding
 import com.example.diyarna.databinding.ProductItemBinding
 import com.example.diyarna.domain.usecase.LoadPhoto
+import okhttp3.internal.notify
 
 class CartAdapter : RecyclerView.Adapter<CartAdapter.ItemHolder>() {
 
@@ -54,14 +55,41 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.ItemHolder>() {
             loadPhoto.invoke(itemBinding.itemImage,itemDto.image,itemView.context)
             itemBinding.count.cartCountIV.setText(""+itemDto.count)
             itemBinding.price.text=""+itemDto.price*itemDto.count+" EGP"
+
+            itemBinding.count.increase.setOnClickListener {
+                itemDto.count+=1
+                mListener.updateItem(itemDto)
+                updatePrice(itemDto)
+
+            }
+
+            itemBinding.count.decrease.setOnClickListener {
+                itemDto.count-=1
+                updatePrice(itemDto)
+                mListener.updateItem(itemDto)
+                if (itemDto.count==0)
+                {
+                    mListener.onItemRemoved(itemDto)
+                    notifyDataSetChanged()
+                }
+            }
+
+        }
+
+        fun updatePrice(itemDto: ProductItem)
+        {
+            itemBinding.count.cartCountIV.setText(""+itemDto.count)
+            itemBinding.price.text=""+itemDto.price*itemDto.count+" EGP"
         }
     }
 
     lateinit var mListener: ItemAdapterListener
 
     interface ItemAdapterListener {
-        fun onItemClicked(item: ProductItem)
-        fun onDetailsItemClicked(item: ProductItem)
+
+        fun updateItem(item: ProductItem)
+
+        fun onItemRemoved(item: ProductItem)
 
     }
 

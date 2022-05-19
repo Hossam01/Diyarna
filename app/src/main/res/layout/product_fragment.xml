@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="All Product"
+        android:text="@string/all_product"
         android:fontFamily="@font/din_next_bold"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"

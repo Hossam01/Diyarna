@@ -21,6 +21,11 @@ class DataRepoImpl @Inject constructor(val preferencesManager: SharedPreferences
         return preferencesManager.get(key)
     }
 
+    override fun remove(key: String):Boolean {
+       return preferencesManager.remove(key)
+    }
+
+
     override suspend fun getProduct(): Response<ProductModel> {
 
         try {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.diyarna.R
 import com.example.diyarna.base.BaseFragment
 import com.example.diyarna.data.remote.model.ProductItem
 import com.example.diyarna.databinding.DetailsFragmentBinding
@@ -20,7 +21,7 @@ class DetailsFragment : BaseFragment<DetailsFragmentBinding>(DetailsFragmentBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setToolbarTitle("Details")
+        setToolbarTitle(resources.getString(R.string.details))
 
         var itemDto= requireArguments().getParcelable<ProductItem>("itemDetails")
         var loadImg=LoadPhoto()

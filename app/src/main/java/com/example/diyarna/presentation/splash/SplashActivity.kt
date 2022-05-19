@@ -41,12 +41,9 @@ class SplashActivity : BaseActivity() {
                 {
                     gotoLogin(LoginActivity())
                 }
-
             }
-
         }
     }
-
 
     fun gotoLogin(activity: BaseActivity) {
         var intent = Intent(this@SplashActivity, activity::class.java)

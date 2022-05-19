@@ -68,7 +68,7 @@
 
     <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/transparent</item>
     </style>
 
 </resources>

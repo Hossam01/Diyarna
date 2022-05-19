@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Diyarna</string>
+    <string name="app_name">ديارنا</string>
     <string name="facebook_app_id">323455573236307</string>
     <string name="fb_login_protocol_scheme">fb323455573236307</string>
-    <string name="title_home">Home</string>
-    <string name="campaigns">Campaigns</string>
-    <string name="products">Products</string>
-    <string name="search">Search</string>
-    <string name="latest_products">Latest Products</string>
-    <string name="check_all"><![CDATA[Check all >]]></string>
-    <string name="latest_campaigns">Latest Campaigns</string>
-    <string name="daily_donation">Daily Donation</string>
-    <string name="news">News</string>
-    <string name="donate_now">Donate Now</string>
-    <string name="custom_amount">Custom Amount</string>
+    <string name="title_home">الرئيسيه</string>
+    <string name="campaigns">الحملات</string>
+    <string name="products">المنتجات</string>
+    <string name="search">البحث</string>
+    <string name="latest_products">أحدث المنتجات</string>
+    <string name="check_all"><![CDATA[المزيد >]]></string>
+    <string name="latest_campaigns">أحدث الحملات</string>
+    <string name="daily_donation">التبرع اليومي</string>
+    <string name="news">الاخبار</string>
+    <string name="donate_now">تبرع الان</string>
+    <string name="custom_amount">المبلغ المخصص</string>
     <string name="egp">EGP</string>
-    <string name="your_cart_empty">Your Cart is Empty</string>
-    <string name="price">Price</string>
-    <string name="more">More</string>
+    <string name="your_cart_empty">عربة التسوق فارغة</string>
+    <string name="price">السعر</string>
+    <string name="more">المزيد</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="privacy">سياسه الخصوصيه</string>
+    <string name="language">اللغه</string>
+    <string name="arabic_language">اللغه العربيه</string>
+    <string name="english_language">اللغه الانجليزيه</string>
+    <string name="save">حفظ</string>
+    <string name="about_details">مؤسسة ديارنا للتنمية هي مؤسسة تنموية خيريه تطوعية أنشئت رسميا عام ٢٠٢٠ تهدف الي التنمية والمساعدات الاجتماعية لكل محتاج علي ارض مصرنا الحبيبة ، وتعمل علي اربع محاور ( التنمية - المساعدات العامة - الطوارئ- المساعدات الفردية ) وتستهدف الاماكن الاكثر احتياجا والمحافظات النائية والحدودية وخط الصعيد ، وتعمل المؤسسة علي انشاء مشاريع تنموية عامة وخاصة وإنشاء محطات تنقية مياه واعمار وبناء وتسقيف المنازل وقافل طبيه، وتوصيلات مياه بالعداد، وعمل شنط وكراتين غذائية واجبات إطعام ساخنه وعمليات طبية وكل أشكال العمل الإنساني .</string>
+    <string name="contact_details">العنوان / 5شارع روضة الاهرام - حدائق الاهرام القديمة - ميدان الرماية - الجيزة
+         تليفون ارضي / 0233762679 - موبايل / 01026855550 - 01020333398</string>
+
+    <string name="privacy_details">أنشأت ديارنا تطبيق ديارنا كتطبيق مجانا
+    هذه الخدمة مقدمة من ديارنا بدون تكلفة وهي مخصصة للاستخدام كما هي.
+        تُستخدم هذه الصفحة لإعلام الزائرين بشأن سياساتنا بجمع المعلومات الشخصية واستخدامها والكشف عنها إذا قرر أي شخص استخدام خدمتنا.</string>
+    <string name="details">التفاصيل</string>
+    <string name="cart">عربة التسوق</string>
+    <string name="all_campaigns">جميع الحملات</string>
+    <string name="all_product">جميع المنتجات</string>
 </resources>

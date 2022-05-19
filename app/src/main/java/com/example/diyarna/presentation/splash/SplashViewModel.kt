@@ -20,6 +20,5 @@ class SplashViewModel @ViewModelInject constructor(val dataRepoImpl: DataRepoImp
     }
     private fun getUser()=viewModelScope.launch {
         userActive.emit(dataRepoImpl.get("name"))
-        Log.d("TAG", "getUser: ${dataRepoImpl.get("name")}")
     }
 }

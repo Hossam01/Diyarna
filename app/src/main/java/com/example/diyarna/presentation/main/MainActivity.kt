@@ -1,6 +1,7 @@
 package com.example.diyarna.presentation.main
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,8 +13,8 @@ import com.example.diyarna.R
 import com.example.diyarna.base.BaseActivity
 import com.example.diyarna.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.core.view.GravityCompat
 import com.example.diyarna.data.remote.model.ProductItem
+import com.example.diyarna.presentation.login.LoginActivity
 
 
 @AndroidEntryPoint
@@ -67,7 +68,6 @@ class MainActivity : BaseActivity() {
             binding.toolbar.cartCountIV.visibility = View.VISIBLE
             binding.toolbar.cartCountIV.text = cardListProducts.size.toString() + ""
             cardListProducts.find { it.id == product.id }!!.totalPrice = product.count*product.price
-
     }
 
     fun removeProductFromCard(product: ProductItem) {
@@ -78,7 +78,7 @@ class MainActivity : BaseActivity() {
             binding.toolbar.cartCountIV.text=cardListProducts.size.toString() + ""
         }
     }
-    
+
     fun updateProductinCard(product: ProductItem){
         if (product.count==0)
         {
@@ -89,6 +89,12 @@ class MainActivity : BaseActivity() {
             cardListProducts.find { it.id == product.id }!!.totalPrice = product.count*product.price
         }
         Log.d("TAG", "addProductToCard: " + cardListProducts)
+    }
+
+    fun gotoLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
 

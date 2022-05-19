@@ -10,6 +10,8 @@ interface DataRepo {
 
     suspend fun get(key:String):String?
 
+    fun remove(key: String):Boolean
+
     suspend fun getProduct():Response<ProductModel>
 
     suspend fun getCampaigns():Response<Campaigns>

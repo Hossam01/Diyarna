@@ -38,6 +38,7 @@
         android:id="@+id/nav_donate_view"
         android:name="com.example.diyarna.presentation.main.Dialog.DonateDialog"
         tools:layout="@layout/donate_dialog"/>
+
     <fragment
         android:id="@+id/nav_details"
         android:name="com.example.diyarna.presentation.main.details.DetailsFragment"
@@ -55,5 +56,16 @@
         android:name="com.example.diyarna.presentation.main.more.MoreFragment"
         android:label="More"
         tools:layout="@layout/more_fragment"/>
+
+    <dialog
+        android:id="@+id/nav_about"
+        android:name="com.example.diyarna.presentation.main.Dialog.AboutUsDialog"
+        android:label="AboutUsDialog"
+        tools:layout="@layout/about_dialog"/>
+    <dialog
+        android:id="@+id/nav_language"
+        android:name="com.example.diyarna.presentation.main.Dialog.LanguageDialog"
+        android:label="LanguageDialog"
+        tools:layout="@layout/language_dialog"/>
 
 </navigation>

@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infl
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        setToolbarTitle("Home")
+        setToolbarTitle(resources.getString(R.string.title_home))
 
     }
 

@@ -17,4 +17,26 @@
     <string name="your_cart_empty">Your Cart is Empty</string>
     <string name="price">Price</string>
     <string name="more">More</string>
+    <string name="logout">Logout</string>
+    <string name="login">login</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="privacy">Privacy Policy</string>
+    <string name="language">Language</string>
+    <string name="arabic_language">Arabic Language</string>
+    <string name="english_language">English Language</string>
+    <string name="save">Save</string>
+    <string name="about_details">Diyaruna Foundation for Development is a voluntary, charitable development institution, officially established in 2020, aimed at development and social assistance to everyone in need on the beloved land of our Egypt. The Foundation aims to establish public and private development projects, construct water purification plants, construct and roof homes, a medical convoy, water meters, make food bags and cartons, hot feeding duties, medical operations, and all forms of humanitarian work.</string>
+    <string name="contact_details">Address / 5 Rawdat Al-Ahram Street - Old Al-Ahram Gardens - Al-Remaya Square - Giza
+     landline / 0233762679 - Mobile / 01026855550 - 01020333398</string>
+
+    <string name="privacy_details">Diyarna built the Diyarna app as a free app.
+this service is provided by Diyarna at no cost and is intended for use as is.
+
+this page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information  if anyone decided to use our Service.</string>
+    <string name="details">Details</string>
+    <string name="cart">Cart</string>
+    <string name="all_campaigns">All Campaigns</string>
+    <string name="all_product">All Product</string>
+
 </resources>

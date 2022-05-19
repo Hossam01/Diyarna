@@ -28,9 +28,7 @@ class ProductFragment:BaseFragment<ProductFragmentBinding>(ProductFragmentBindin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setToolbarTitle("Product")
-
+        setToolbarTitle(resources.getString(R.string.products))
         binding.container.setOnRefreshListener {
             homeViewModel.getDataItem()
         }

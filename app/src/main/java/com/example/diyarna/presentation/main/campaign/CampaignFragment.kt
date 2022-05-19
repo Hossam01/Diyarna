@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.diyarna.R
 import com.example.diyarna.base.BaseFragment
 import com.example.diyarna.data.remote.model.ProductItem
 import com.example.diyarna.databinding.CampaignFragmentBinding
@@ -29,16 +30,12 @@ class CampaignFragment:BaseFragment<CampaignFragmentBinding>(CampaignFragmentBin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setToolbarTitle("Campaign")
-
-        binding.container.setOnRefreshListener {
+        setToolbarTitle(resources.getString(R.string.campaigns))
+        binding.campcontainer.setOnRefreshListener {
             homeViewModel.getCampaignsItem()
         }
-        if (arguments==null)
-        {
         getCampaignsItem()
-        }
+
     }
 
     fun getCampaignsItem() {
@@ -46,14 +43,13 @@ class CampaignFragment:BaseFragment<CampaignFragmentBinding>(CampaignFragmentBin
             homeViewModel.getCampaignsData().collect {
                 when (it.status) {
                     Status.OK -> {
+                        binding.campcontainer.isRefreshing=false
                         assignCampaginsAdapter()
                         adapterCampaginsItem.submitList(it.results!!.campaigns)
-                        binding.container.isRefreshing=false
                     }
                     Status.ERROR -> {
                         if (it.message != null) {
                             showToast(it.message)
-
                         }
                     }
                     Status.LOADING -> {
