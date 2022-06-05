@@ -38,6 +38,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         getProductItem()
         getCampaignsItem()
 
@@ -117,7 +118,6 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infl
 
     override fun updateItem(item: ProductItem) {
         (requireActivity() as MainActivity).updateProductinCard(item)
-
     }
 
     override fun goToDetails(item: ProductItem) {

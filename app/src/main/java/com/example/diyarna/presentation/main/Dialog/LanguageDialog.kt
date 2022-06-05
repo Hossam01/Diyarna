@@ -19,6 +19,7 @@ import com.example.diyarna.presentation.main.MainActivity
 import android.os.Build
 
 import android.util.DisplayMetrics
+import com.example.diyarna.domain.usecase.ChangeLanguage
 import java.util.*
 
 
@@ -50,7 +51,8 @@ class LanguageDialog: DialogFragment() {
         })
         binding.save.setOnClickListener {
             languageViewModel.SaveLanguage(mLang)
-            changeLocal(mLang)
+            var changeLanguage=ChangeLanguage()
+            context?.let { it1 -> changeLanguage(mLang, it1) }
             restartApp()
             dismiss()
         }

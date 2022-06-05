@@ -85,7 +85,7 @@ class ValueProgressBar @JvmOverloads constructor(
         super.onSizeChanged(w, h, oldw, oldh)
         containerRectF = RectF()
         containerRectF.set(0f, 0f, w.toFloat(), h.toFloat())
-        spaceAtCenter = ((0.05 * containerRectF.right) / 2).toFloat()
+        spaceAtCenter = ((0.05 * containerRectF.right) / 10).toFloat()
     }
 
     override fun onDraw(canvas: Canvas?) {

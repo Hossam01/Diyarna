@@ -9,8 +9,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.lifecycleScope
+import com.example.diyarna.domain.usecase.ChangeLanguage
 import com.example.diyarna.presentation.login.LoginActivity
 import com.example.diyarna.presentation.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,15 +28,20 @@ class SplashActivity : BaseActivity() {
     lateinit var binding: ActivitySplashBinding
     private val viewModel:SplashViewModel by viewModels()
     val activityScope = CoroutineScope(Dispatchers.Main)
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var changeLanguage = ChangeLanguage()
+
+
         activityScope.launch {
             showProgressBar(true)
             delay(3000)
             viewModel.getUserActive().collect {
+
                 if (it!=null)
                 {
                     gotoLogin(MainActivity())
@@ -41,6 +49,11 @@ class SplashActivity : BaseActivity() {
                 {
                     gotoLogin(LoginActivity())
                 }
+            }
+        }
+        activityScope.launch {
+            viewModel.getlanguage().collect(){
+                it?.let { it1 -> changeLanguage(it1,this@SplashActivity) }
             }
         }
     }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.diyarna.R
@@ -24,7 +25,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class CampaignFragment:BaseFragment<CampaignFragmentBinding>(CampaignFragmentBinding::inflate) {
 
-    val homeViewModel : HomeViewModel by viewModels()
+    val homeViewModel : HomeViewModel by activityViewModels()
     lateinit var adapterCampaginsItem: CampaginsAdapter
 
 
@@ -33,7 +34,9 @@ class CampaignFragment:BaseFragment<CampaignFragmentBinding>(CampaignFragmentBin
         setToolbarTitle(resources.getString(R.string.campaigns))
         binding.campcontainer.setOnRefreshListener {
             homeViewModel.getCampaignsItem()
+            binding.campcontainer.isRefreshing=false
         }
+
         getCampaignsItem()
 
     }
@@ -43,7 +46,6 @@ class CampaignFragment:BaseFragment<CampaignFragmentBinding>(CampaignFragmentBin
             homeViewModel.getCampaignsData().collect {
                 when (it.status) {
                     Status.OK -> {
-                        binding.campcontainer.isRefreshing=false
                         assignCampaginsAdapter()
                         adapterCampaginsItem.submitList(it.results!!.campaigns)
                     }

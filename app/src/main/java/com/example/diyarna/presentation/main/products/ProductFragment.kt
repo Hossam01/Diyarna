@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.diyarna.R
@@ -21,7 +22,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductFragment:BaseFragment<ProductFragmentBinding>(ProductFragmentBinding::inflate), ProductAdapter.ItemAdapterListener {
-    val homeViewModel : HomeViewModel by viewModels()
+    val homeViewModel : HomeViewModel by activityViewModels()
     lateinit var adapteritem: ProductAdapter
 
 
